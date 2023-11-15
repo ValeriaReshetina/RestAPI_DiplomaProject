@@ -37,4 +37,4 @@
 
 ## 📄 Description
 
-This test project consists of UI tests and includes the following features:
+This test project consists of API-tests and includes the following features:
