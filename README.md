@@ -22,6 +22,7 @@
 
 <div style="text-align: center;">
 <img width="7%" title="IntelliJ IDEA" src="images/logo/idea.png" alt="IntelliJ IDEA Logo">
+<img width="7%" title="Rest Assured" src="images/logo/restAssured.png" alt="Rest Assured Logo">
 <img width="7%" title="GitHub" src="images/logo/github.png" alt="GitHub Logo">
 <img width="7%" title="Java" src="images/logo/java.png" alt="Java Logo">
 <img width="7%" title="Junit5" src="images/logo/junit5.png" alt="JUnit5 Logo">
