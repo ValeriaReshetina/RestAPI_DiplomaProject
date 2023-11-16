@@ -32,7 +32,7 @@ public class ReqresTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Successful user deletion")
+    @DisplayName("Successful deletion of user")
     @Severity(SeverityLevel.BLOCKER)
     void userDeletionTest() {
         given()
@@ -86,7 +86,7 @@ public class ReqresTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Successful retrieving a list of users")
+    @DisplayName("Successful retrieving of user list")
     @Severity(SeverityLevel.CRITICAL)
     void getUsersListTest() {
         given()

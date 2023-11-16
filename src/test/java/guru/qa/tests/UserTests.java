@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UserTests extends TestBase {
 
     @Test
-    @DisplayName("Successful GET-request for user list")
+    @DisplayName("Successful retrieving of user list")
     @Severity(SeverityLevel.BLOCKER)
     void getUserListTest() {
         UserListResponseModel response = step("GET-request for user list", () ->
