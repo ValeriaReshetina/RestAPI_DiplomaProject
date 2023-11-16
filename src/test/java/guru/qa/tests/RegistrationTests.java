@@ -3,6 +3,9 @@ package guru.qa.tests;
 import guru.qa.models.registration.MissingPasswordResponseLombokModel;
 import guru.qa.models.registration.RegistrationBodyModel;
 import guru.qa.models.registration.RegistrationResponseModel;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,10 +14,12 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("Valeria Reshetina")
 public class RegistrationTests extends TestBase {
 
-    @DisplayName("Successful user registration")
     @Test
+    @DisplayName("Successful user registration")
+    @Severity(SeverityLevel.BLOCKER)
     void userRegistrationTest() {
         RegistrationBodyModel registrationData = new RegistrationBodyModel();
         registrationData.setEmail("eve.holt@reqres.in");
@@ -35,8 +40,9 @@ public class RegistrationTests extends TestBase {
         });
     }
 
-    @DisplayName("Failed attempt to register user")
     @Test
+    @DisplayName("Failed attempt to register user")
+    @Severity(SeverityLevel.CRITICAL)
     void negativeRegisterUserTest() {
         RegistrationBodyModel registrationData = new RegistrationBodyModel();
         registrationData.setEmail("eve.holt@reqres.in");

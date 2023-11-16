@@ -1,6 +1,10 @@
 package guru.qa.tests;
 
 import guru.qa.models.user.UserListResponseModel;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
@@ -11,9 +15,12 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("Valeria Reshetina")
 public class UserTests extends TestBase {
 
     @Test
+    @DisplayName("Successful GET-request for user list")
+    @Severity(SeverityLevel.BLOCKER)
     void getUserListTest() {
         UserListResponseModel response = step("GET-request for user list", () ->
                 given(userRequestSpec)

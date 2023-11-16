@@ -1,5 +1,8 @@
 package guru.qa.tests;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,10 +10,12 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
 
+@Owner("Valeria Reshetina")
 public class ReqresTests extends TestBase {
 
-    @DisplayName("Successful creation of user")
     @Test
+    @DisplayName("Successful creation of user")
+    @Severity(SeverityLevel.BLOCKER)
     void userCreationTest() {
         given()
                 .log().uri()
@@ -26,8 +31,9 @@ public class ReqresTests extends TestBase {
                 .statusCode(201);
     }
 
-    @DisplayName("Successful user deletion")
     @Test
+    @DisplayName("Successful user deletion")
+    @Severity(SeverityLevel.BLOCKER)
     void userDeletionTest() {
         given()
                 .log().uri()
@@ -43,8 +49,9 @@ public class ReqresTests extends TestBase {
                 .statusCode(204);
     }
 
-    @DisplayName("Successful user registration")
     @Test
+    @DisplayName("Successful user registration")
+    @Severity(SeverityLevel.BLOCKER)
     void userRegistrationTest() {
         given()
                 .log().uri()
@@ -60,8 +67,9 @@ public class ReqresTests extends TestBase {
                 .statusCode(200);
     }
 
-    @DisplayName("Failed attempt to register user")
     @Test
+    @DisplayName("Failed attempt to register user")
+    @Severity(SeverityLevel.CRITICAL)
     void negativeRegisterUserTest() {
         given()
                 .log().uri()
@@ -77,8 +85,9 @@ public class ReqresTests extends TestBase {
                 .statusCode(400);
     }
 
-    @DisplayName("Successful retrieving a list of users")
     @Test
+    @DisplayName("Successful retrieving a list of users")
+    @Severity(SeverityLevel.CRITICAL)
     void getUsersListTest() {
         given()
                 .log().uri()
