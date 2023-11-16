@@ -16,7 +16,6 @@
 - [🚀 Integration with Allure TestOps](#-integration-with-allure-testops)
 - [🔗 Integration with Jira](#-integration-with-jira)
 - [📣 Integration with Telegram](#-telegram-notifications-using-a-bot)
-- [📹 Video of running tests](#-test-running-example-in-selenoid)
 
 ## 🛠️ Stack of technologies
 
@@ -29,7 +28,6 @@
 <img width="7%" title="Gradle" src="images/logo/gradle.png" alt="Gradle Logo">
 <img width="7%" title="Selenide" src="images/logo/selenide.png" alt="Selenide Logo">
 <img width="7%" title="Jenkins" src="images/logo/jenkins.png" alt="Jenkins Logo">
-<img width="7%" title="Selenoid" src="images/logo/selenoid.png" alt="Selenoid Logo">
 <img width="7%" title="Allure Report" src="images/logo/allure.png" alt="Allure Report Logo">
 <img width="7%" title="Allure TestOps" src="images/logo/allureTestops.png" alt="Allure TestOps Logo">
 <img width="7%" title="Jira" src="images/logo/jira.png" alt="Jira Logo">
