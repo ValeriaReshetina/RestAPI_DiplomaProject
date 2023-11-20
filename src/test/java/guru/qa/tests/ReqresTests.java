@@ -71,6 +71,8 @@ public class ReqresTests extends TestBase {
     @DisplayName("Failed attempt to register user")
     @Severity(SeverityLevel.CRITICAL)
     void negativeRegisterUserTest() {
+        String basePath = "/register";
+
         given()
                 .log().uri()
                 .log().method()
@@ -78,7 +80,7 @@ public class ReqresTests extends TestBase {
                 .contentType(JSON)
                 .body("{ \"email\": \"eve.holt@reqres.in\" }")
                 .when()
-                .post("/register")
+                .post(basePath)
                 .then()
                 .log().status()
                 .log().body()
@@ -89,12 +91,14 @@ public class ReqresTests extends TestBase {
     @DisplayName("Successful retrieving of user list")
     @Severity(SeverityLevel.CRITICAL)
     void getUsersListTest() {
+        String basePath = "/users?page=2";
+
         given()
                 .log().uri()
                 .log().method()
                 .log().body()
                 .contentType(JSON)
-                .get("/users?page=2")
+                .get(basePath)
                 .then()
                 .log().status()
                 .log().body()

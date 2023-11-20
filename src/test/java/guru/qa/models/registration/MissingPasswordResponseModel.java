@@ -5,6 +5,6 @@ import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-public class MissingPasswordResponseLombokModel {
+public class MissingPasswordResponseModel {
     String error;
 }

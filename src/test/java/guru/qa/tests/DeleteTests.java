@@ -17,9 +17,11 @@ public class DeleteTests extends TestBase {
     @DisplayName("Successful user deletion")
     @Severity(SeverityLevel.BLOCKER)
     void userDeletionTest() {
+        String basePath = "/users/2";
+
         step("DELETE-request for user deletion", () -> {
             given()
-                    .delete("/users/2")
+                    .delete(basePath)
                     .then()
                     .log().body()
                     .spec(deleteResponseSpec);

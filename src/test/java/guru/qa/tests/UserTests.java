@@ -22,10 +22,12 @@ public class UserTests extends TestBase {
     @DisplayName("Successful retrieving of user list")
     @Severity(SeverityLevel.BLOCKER)
     void getUserListTest() {
+        String basePath = "/users?page=2";
+
         UserListResponseModel response = step("GET-request for user list", () ->
                 given(userRequestSpec)
                         .when()
-                        .get("/users?page=2")
+                        .get(basePath)
                         .then()
                         .spec(userResponseSpec)
                         .extract().as(UserListResponseModel.class));
