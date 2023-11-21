@@ -14,6 +14,8 @@ import static guru.qa.specs.UserSpec.userResponseSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Owner("Valeria Reshetina")
 public class UserTests extends TestBase {
@@ -33,14 +35,15 @@ public class UserTests extends TestBase {
                         .extract().as(UserListResponseModel.class));
 
         step("Verify response", () -> {
-            assertThat(response.getTotal()).isEqualTo(12);
-            assertThat(response.getData()
-                    .stream()
-                    .filter(Objects::nonNull)
-                    .filter(user -> user.getId() == 10)
-                    .findFirst()
-                    .get()
-                    .getEmail()).isEqualTo("byron.fields@reqres.in");
+            assertAll(
+                    () -> assertEquals(response.getTotal(), (12)),
+                    () -> assertEquals(response.getData().stream()
+                            .filter(Objects::nonNull)
+                            .filter(user -> user.getId() == 10)
+                            .findFirst()
+                            .get()
+                            .getEmail(), "byron.fields@reqres.in")
+            );
         });
     }
 }

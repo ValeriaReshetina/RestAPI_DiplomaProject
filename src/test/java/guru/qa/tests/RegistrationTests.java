@@ -13,6 +13,8 @@ import static guru.qa.specs.RegistrationSpec.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Owner("Valeria Reshetina")
 public class RegistrationTests extends TestBase {
@@ -35,8 +37,9 @@ public class RegistrationTests extends TestBase {
                         .extract().as(RegistrationResponseModel.class));
 
         step("Verify response", () -> {
-            assertThat(response.getId()).isEqualTo(4);
-            assertThat(response.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
+            assertAll(
+                    () -> assertEquals(response.getId(), (4)),
+                    () -> assertEquals(response.getToken(), (config.getToken())));
         });
     }
 
